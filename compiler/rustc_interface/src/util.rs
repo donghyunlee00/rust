@@ -42,19 +42,19 @@ pub fn add_configuration(
     sess: &mut Session,
     codegen_backend: &dyn CodegenBackend,
 ) {
-    let tf = sym::target_feature;
+    // let tf = sym::target_feature;
 
-    let unstable_target_features = codegen_backend.target_features(sess, true);
-    sess.unstable_target_features.extend(unstable_target_features.iter().cloned());
+    // let unstable_target_features = codegen_backend.target_features(sess, true);
+    // sess.unstable_target_features.extend(unstable_target_features.iter().cloned());
 
-    let target_features = codegen_backend.target_features(sess, false);
-    sess.target_features.extend(target_features.iter().cloned());
+    // let target_features = codegen_backend.target_features(sess, false);
+    // sess.target_features.extend(target_features.iter().cloned());
 
-    cfg.extend(target_features.into_iter().map(|feat| (tf, Some(feat))));
+    // cfg.extend(target_features.into_iter().map(|feat| (tf, Some(feat))));
 
-    if sess.crt_static(None) {
-        cfg.insert((tf, Some(sym::crt_dash_static)));
-    }
+    // if sess.crt_static(None) {
+    //     cfg.insert((tf, Some(sym::crt_dash_static)));
+    // }
 }
 
 pub fn create_session(
